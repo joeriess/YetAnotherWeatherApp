@@ -16,27 +16,34 @@ final class WeatherViewController: UIViewController {
     // MARK: - Views
     
     private let headerView: UIView = {
-        $0.backgroundColor = .red
+        $0.backgroundColor = UIColor(red:0.45, green:0.84, blue:0.84, alpha:1.00)
         return $0
     }(UIView())
     
     private let timeCityLabel: UILabel = {
-        
+        $0.textAlignment = .center
+        $0.text = "Berlin"
+        $0.backgroundColor = .red
+        $0.textColor = .white
+        $0.numberOfLines = 0
         return $0
     }(UILabel())
     
     private let nowTemperatureLabel: UILabel = {
-        
+        $0.textAlignment = .center
+        $0.text = "22"
+        $0.textColor = .white
         return $0
     }(UILabel())
     
     private let headerStackView: UIStackView = {
-
+        $0.axis = .vertical
+        $0.distribution = .fillEqually
         return $0
     }(UIStackView())
     
     private let headerBackgroundImageView: UIImageView = {
-        $0.image = #imageLiteral(resourceName: "TGaZIQ")
+//        $0.image = #imageLiteral(resourceName: "TGaZIQ")
         return $0
     }(UIImageView())
     
@@ -49,6 +56,8 @@ final class WeatherViewController: UIViewController {
         
         return $0
     }(UITableView())
+    
+    private var didCreateConstraints = false
     
     // MARK: - Presenter
     
@@ -66,26 +75,41 @@ final class WeatherViewController: UIViewController {
         
         view.addSubview(headerView)
         headerView.addSubview(headerBackgroundImageView)
+        
         view.addSubview(detailTableView)
+        
+        headerView.addSubview(headerStackView)
+        headerStackView.addArrangedSubview(timeCityLabel)
+        headerStackView.addArrangedSubview(nowTemperatureLabel)
         
         view.setNeedsUpdateConstraints()
     }
     
     override func updateViewConstraints() {
         
-        headerView.snp.makeConstraints() { make in
-            make.size.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.5)
+        if !didCreateConstraints {
+            
+            headerView.snp.makeConstraints() { make in
+                make.size.equalToSuperview()
+                make.height.equalToSuperview().multipliedBy(0.5)
+            }
+            
+            headerBackgroundImageView.snp.makeConstraints() { make in
+                make.size.equalToSuperview()
+            }
+            
+            detailTableView.snp.makeConstraints() { make in
+                make.size.equalToSuperview()
+                make.top.equalTo(headerView.snp.bottom)
+            }
+            
+            headerStackView.snp.makeConstraints() { make in
+                make.size.equalToSuperview()
+            }
+            
+            didCreateConstraints = true
         }
         
-        headerBackgroundImageView.snp.makeConstraints() { make in
-            make.size.equalToSuperview()
-        }
-        
-        detailTableView.snp.makeConstraints() { make in
-            make.size.equalToSuperview()
-            make.top.equalTo(headerView.snp.bottom)
-        }
         
         super.updateViewConstraints()
     }

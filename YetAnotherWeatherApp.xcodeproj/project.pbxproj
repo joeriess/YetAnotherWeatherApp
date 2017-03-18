@@ -23,6 +23,11 @@
 		FA93D69B1E7B720200AF6ED3 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D6931E7B720200AF6ED3 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA93D6A31E7B727100AF6ED3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */; };
 		FA93D6A51E7B72A400AF6ED3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6A41E7B72A400AF6ED3 /* WeatherView.swift */; };
+		FA93D6F31E7DCA7800AF6ED3 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6F21E7DCA7800AF6ED3 /* Temperature.swift */; };
+		FA93D6F51E7DCBF100AF6ED3 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6F41E7DCBF100AF6ED3 /* WeatherService.swift */; };
+		FA93D6F71E7DCC3E00AF6ED3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6F61E7DCC3E00AF6ED3 /* Weather.swift */; };
+		FA93D6F91E7DCC7700AF6ED3 /* OpenWeatherMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6F81E7DCC7700AF6ED3 /* OpenWeatherMap.swift */; };
+		FA93D6FC1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,11 @@
 		FA93D6931E7B720200AF6ED3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		FA93D6A41E7B72A400AF6ED3 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		FA93D6F21E7DCA7800AF6ED3 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		FA93D6F41E7DCBF100AF6ED3 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		FA93D6F61E7DCC3E00AF6ED3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		FA93D6F81E7DCC7700AF6ED3 /* OpenWeatherMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMap.swift; sourceTree = "<group>"; };
+		FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +142,8 @@
 		FA93D65E1E7B70DD00AF6ED3 /* YetAnotherWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				FA93D69E1E7B722400AF6ED3 /* Weather Detail */,
+				FA93D6ED1E7DC23100AF6ED3 /* Modules */,
+				FA93D6EF1E7DC24000AF6ED3 /* Services */,
 				FA93D65F1E7B70DD00AF6ED3 /* AppDelegate.swift */,
 				FA93D6691E7B70DD00AF6ED3 /* Assets.xcassets */,
 				FA93D66B1E7B70DD00AF6ED3 /* LaunchScreen.storyboard */,
@@ -197,6 +208,50 @@
 				FA93D6A41E7B72A400AF6ED3 /* WeatherView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		FA93D6ED1E7DC23100AF6ED3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D69E1E7B722400AF6ED3 /* Weather Detail */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		FA93D6EF1E7DC24000AF6ED3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D6F11E7DC2B300AF6ED3 /* Weather */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		FA93D6F01E7DC29E00AF6ED3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D6F21E7DCA7800AF6ED3 /* Temperature.swift */,
+				FA93D6F61E7DCC3E00AF6ED3 /* Weather.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		FA93D6F11E7DC2B300AF6ED3 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D6F41E7DCBF100AF6ED3 /* WeatherService.swift */,
+				FA93D6FA1E7DCCAD00AF6ED3 /* OpenWeatherMap */,
+				FA93D6F01E7DC29E00AF6ED3 /* Entities */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		FA93D6FA1E7DCCAD00AF6ED3 /* OpenWeatherMap */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D6F81E7DCC7700AF6ED3 /* OpenWeatherMap.swift */,
+				FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */,
+			);
+			name = OpenWeatherMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +394,12 @@
 				FA93D6681E7B70DD00AF6ED3 /* YetAnotherWeatherApp.xcdatamodeld in Sources */,
 				FA93D6A31E7B727100AF6ED3 /* WeatherViewController.swift in Sources */,
 				FA93D6601E7B70DD00AF6ED3 /* AppDelegate.swift in Sources */,
+				FA93D6F31E7DCA7800AF6ED3 /* Temperature.swift in Sources */,
+				FA93D6F51E7DCBF100AF6ED3 /* WeatherService.swift in Sources */,
 				FA93D6A51E7B72A400AF6ED3 /* WeatherView.swift in Sources */,
+				FA93D6F91E7DCC7700AF6ED3 /* OpenWeatherMap.swift in Sources */,
+				FA93D6F71E7DCC3E00AF6ED3 /* Weather.swift in Sources */,
+				FA93D6FC1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
