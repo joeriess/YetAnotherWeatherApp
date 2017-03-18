@@ -13,6 +13,7 @@ struct WeatherViewModel {
     let city: String
     let humidity: String
     let description: String
+    let timeFetched: String
 }
 
 protocol WeatherView {
