@@ -65,6 +65,10 @@ final class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        OpenWeatherMap().getWeather(for: "New%20", countryCode: "US") { weather in
+            print(weather)
+        }
 
         let fakeViewModel = WeatherViewModel(temperature: (current: "25", high: "30", low: "20"),
                                              city: "Berlin",

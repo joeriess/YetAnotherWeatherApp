@@ -19,7 +19,7 @@ final class OpenWeatherMap: WeatherService {
             case let .success(weather):
                 completion(weather)
             case let .failure(error):
-                break
+                print(error)
             }
         }
     }

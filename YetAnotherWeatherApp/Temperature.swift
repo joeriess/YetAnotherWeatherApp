@@ -26,7 +26,7 @@ extension Temperature: Decodable {
         return curry(Temperature.init)
             <^> json <| "temp_min"
             <*> json <| "temp_max"
-            <*> json <| "pressue"
+            <*> json <| "pressure"
             <*> json <| "humidity"
             <*> json <| "temp"
     }

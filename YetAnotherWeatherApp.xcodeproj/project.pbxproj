@@ -28,6 +28,10 @@
 		FA93D6F71E7DCC3E00AF6ED3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6F61E7DCC3E00AF6ED3 /* Weather.swift */; };
 		FA93D6F91E7DCC7700AF6ED3 /* OpenWeatherMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6F81E7DCC7700AF6ED3 /* OpenWeatherMap.swift */; };
 		FA93D6FC1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */; };
+		FA93D6FE1E7DD16E00AF6ED3 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */; };
+		FA93D6FF1E7DD16E00AF6ED3 /* Swish.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA93D7011E7DD19800AF6ED3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D7001E7DD19800AF6ED3 /* Result.framework */; };
+		FA93D7021E7DD19800AF6ED3 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D7001E7DD19800AF6ED3 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +58,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FA93D6FF1E7DD16E00AF6ED3 /* Swish.framework in Embed Frameworks */,
 				FA93D6971E7B720200AF6ED3 /* Curry.framework in Embed Frameworks */,
 				FA93D6991E7B720200AF6ED3 /* Runes.framework in Embed Frameworks */,
+				FA93D7021E7DD19800AF6ED3 /* Result.framework in Embed Frameworks */,
 				FA93D6951E7B720200AF6ED3 /* Argo.framework in Embed Frameworks */,
 				FA93D69B1E7B720200AF6ED3 /* SnapKit.framework in Embed Frameworks */,
 			);
@@ -88,6 +94,8 @@
 		FA93D6F61E7DCC3E00AF6ED3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FA93D6F81E7DCC7700AF6ED3 /* OpenWeatherMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMap.swift; sourceTree = "<group>"; };
 		FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapRequest.swift; sourceTree = "<group>"; };
+		FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swish.framework; path = Carthage/Build/iOS/Swish.framework; sourceTree = "<group>"; };
+		FA93D7001E7DD19800AF6ED3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA93D6FE1E7DD16E00AF6ED3 /* Swish.framework in Frameworks */,
 				FA93D6961E7B720200AF6ED3 /* Curry.framework in Frameworks */,
 				FA93D6981E7B720200AF6ED3 /* Runes.framework in Frameworks */,
+				FA93D7011E7DD19800AF6ED3 /* Result.framework in Frameworks */,
 				FA93D6941E7B720200AF6ED3 /* Argo.framework in Frameworks */,
 				FA93D69A1E7B720200AF6ED3 /* SnapKit.framework in Frameworks */,
 			);
@@ -122,6 +132,8 @@
 		FA93D6531E7B70DD00AF6ED3 = {
 			isa = PBXGroup;
 			children = (
+				FA93D7001E7DD19800AF6ED3 /* Result.framework */,
+				FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */,
 				FA93D65E1E7B70DD00AF6ED3 /* YetAnotherWeatherApp */,
 				FA93D6761E7B70DD00AF6ED3 /* YetAnotherWeatherAppTests */,
 				FA93D6811E7B70DD00AF6ED3 /* YetAnotherWeatherAppUITests */,
