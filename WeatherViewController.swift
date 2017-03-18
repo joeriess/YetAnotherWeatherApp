@@ -71,14 +71,11 @@ final class WeatherViewController: UIViewController {
         view.setNeedsUpdateConstraints()
     }
     
-    
     override func updateViewConstraints() {
         
         headerView.snp.makeConstraints() { make in
-            make.top.equalTo(self.view.snp.topMargin)
-            make.left.equalTo(self.view.snp.left)
-            make.right.equalTo(self.view.snp.right)
-            make.height.equalTo(self.view.frame.size.height / 2)
+            make.size.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.5)
         }
         
         headerBackgroundImageView.snp.makeConstraints() { make in
