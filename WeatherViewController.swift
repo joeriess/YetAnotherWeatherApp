@@ -42,6 +42,11 @@ final class WeatherViewController: UIViewController {
         
         view.addSubview(headerView)
         
+        configureView()
+    }
+    
+    private func configureView() {
+        
         headerView.snp.makeConstraints() { make in
             make.top.equalTo(self.view.snp.topMargin)
             make.left.equalTo(self.view.snp.left)
