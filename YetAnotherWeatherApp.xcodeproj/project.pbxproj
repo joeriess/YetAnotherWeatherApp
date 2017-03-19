@@ -32,6 +32,7 @@
 		FA93D6FF1E7DD16E00AF6ED3 /* Swish.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA93D7011E7DD19800AF6ED3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D7001E7DD19800AF6ED3 /* Result.framework */; };
 		FA93D7021E7DD19800AF6ED3 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D7001E7DD19800AF6ED3 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA93D7051E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapRequest.swift; sourceTree = "<group>"; };
 		FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swish.framework; path = Carthage/Build/iOS/Swish.framework; sourceTree = "<group>"; };
 		FA93D7001E7DD19800AF6ED3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureWeatherDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +134,6 @@
 		FA93D6531E7B70DD00AF6ED3 = {
 			isa = PBXGroup;
 			children = (
-				FA93D7001E7DD19800AF6ED3 /* Result.framework */,
-				FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */,
 				FA93D65E1E7B70DD00AF6ED3 /* YetAnotherWeatherApp */,
 				FA93D6761E7B70DD00AF6ED3 /* YetAnotherWeatherAppTests */,
 				FA93D6811E7B70DD00AF6ED3 /* YetAnotherWeatherAppUITests */,
@@ -187,6 +187,8 @@
 		FA93D69D1E7B720A00AF6ED3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA93D7001E7DD19800AF6ED3 /* Result.framework */,
+				FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */,
 				FA93D6901E7B720200AF6ED3 /* Argo.framework */,
 				FA93D6911E7B720200AF6ED3 /* Curry.framework */,
 				FA93D6921E7B720200AF6ED3 /* Runes.framework */,
@@ -218,6 +220,7 @@
 			children = (
 				FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */,
 				FA93D6A41E7B72A400AF6ED3 /* WeatherView.swift */,
+				FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA93D7051E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift in Sources */,
 				FA93D6681E7B70DD00AF6ED3 /* YetAnotherWeatherApp.xcdatamodeld in Sources */,
 				FA93D6A31E7B727100AF6ED3 /* WeatherViewController.swift in Sources */,
 				FA93D6601E7B70DD00AF6ED3 /* AppDelegate.swift in Sources */,
@@ -660,6 +664,7 @@
 				FA93D6891E7B70DD00AF6ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA93D68A1E7B70DD00AF6ED3 /* Build configuration list for PBXNativeTarget "YetAnotherWeatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -668,6 +673,7 @@
 				FA93D68C1E7B70DD00AF6ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA93D68D1E7B70DD00AF6ED3 /* Build configuration list for PBXNativeTarget "YetAnotherWeatherAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +682,7 @@
 				FA93D68F1E7B70DD00AF6ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

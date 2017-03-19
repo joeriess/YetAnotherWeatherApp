@@ -52,7 +52,8 @@ final class WeatherViewController: UIViewController {
         $0.delegate = self
         $0.dataSource = self
         
-        $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        $0.register(FutureWeatherDetailTableViewCell.self,
+                    forCellReuseIdentifier: "weather")
         
         return $0
     }(UITableView())
@@ -131,7 +132,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weather", for: indexPath)
         return cell
     }
 }
