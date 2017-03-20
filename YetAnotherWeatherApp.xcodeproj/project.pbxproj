@@ -218,8 +218,8 @@
 		FA93D6A11E7B726200AF6ED3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */,
 				FA93D6A41E7B72A400AF6ED3 /* WeatherView.swift */,
+				FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */,
 				FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */,
 			);
 			name = View;

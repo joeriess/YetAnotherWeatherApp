@@ -43,7 +43,6 @@ final class WeatherViewController: UIViewController {
     }(UIStackView())
     
     private let headerBackgroundImageView: UIImageView = {
-//        $0.image = #imageLiteral(resourceName: "TGaZIQ")
         return $0
     }(UIImageView())
     
@@ -54,6 +53,9 @@ final class WeatherViewController: UIViewController {
         
         $0.register(FutureWeatherDetailTableViewCell.self,
                     forCellReuseIdentifier: "weather")
+        
+        $0.separatorStyle = .none
+        $0.backgroundColor = UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.00)
         
         return $0
     }(UITableView())
@@ -66,16 +68,22 @@ final class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        OpenWeatherMap().getWeather(for: "New%20", countryCode: "US") { weather in
-            print(weather)
-        }
+    
+        let todaysWeather = WeatherData(temperature: (current: "25", high: "30", low: "20"),
+                                        city: "Berlin",
+                                        humidity: "5",
+                                        description: "Cold",
+                                        timeFetched: "MON, 11AM",
+                                        day: "TUES")
+        let tomorrowsWeather = WeatherData(temperature: (current: "25", high: "30", low: "20"),
+                                           city: "Berlin",
+                                           humidity: "5",
+                                           description: "Cold",
+                                           timeFetched: "11AM",
+                                           day: "TUES")
 
-        let fakeViewModel = WeatherViewModel(temperature: (current: "25", high: "30", low: "20"),
-                                             city: "Berlin",
-                                             humidity: "5",
-                                             description: "Cold",
-                                             timeFetched: "MON, 11AM")
+        let fakeViewModel = WeatherViewModel(weather: [todaysWeather, tomorrowsWeather])
+        
         viewModel = fakeViewModel
         
         view.addSubview(headerView)
@@ -96,7 +104,7 @@ final class WeatherViewController: UIViewController {
             
             headerView.snp.makeConstraints() { make in
                 make.size.equalToSuperview()
-                make.height.equalToSuperview().multipliedBy(0.5)
+                make.height.equalToSuperview().multipliedBy(0.7)
             }
             
             headerBackgroundImageView.snp.makeConstraints() { make in
@@ -128,11 +136,24 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let weatherCount = viewModel?.weather.count else {
+            return 0
+        }
+        
+        return weatherCount - 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weather", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weather", for: indexPath) as! FutureWeatherDetailTableViewCell
+        
+        if let weatherData = viewModel?.weather[indexPath.row] {
+            cell.configure(weatherData: weatherData)
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
