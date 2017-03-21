@@ -105,9 +105,7 @@ final class WeatherViewController: UIViewController, WeatherView {
     // MARK: - WeatherView Methods
     func display(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
-        
-        print(viewModel)
-        
+                
         guard let tempData = viewModel.weather.first else {
             return
         }

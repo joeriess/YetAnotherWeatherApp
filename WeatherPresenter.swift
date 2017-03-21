@@ -38,13 +38,15 @@ final class WeatherDefaultPresenter: WeatherPresenter {
 struct WeatherViewModelBuilder {
     
     func build(from weather: Weather) -> WeatherViewModel {
-        print(weather)
+        
+        let today = Date()
+
         let weatherData = WeatherData(temperature: (current: "\(Int(weather.temperature.now))", high: "\(weather.temperature.man)", low: "\(weather.temperature.min)"),
                                       city: weather.name,
                                       humidity: "",
                                       description: "It's hot",
-                                      timeFetched: "11AM",
-                                      day: "TUES")
+                                      timeFetched: today.hour,
+                                      day: today.day.uppercased())
         return WeatherViewModel(weather: [weatherData])
     }
 }
