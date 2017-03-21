@@ -35,6 +35,8 @@
 		FA93D7051E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */; };
 		FA93D70B1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D70A1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift */; };
 		FA93D70E1E80A8B900AF6ED3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */; };
+		FA93D7111E80ACA400AF6ED3 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7101E80ACA400AF6ED3 /* WeatherPresenter.swift */; };
+		FA93D7141E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7131E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureWeatherDetailTableViewCell.swift; sourceTree = "<group>"; };
 		FA93D70A1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderLabel.swift; sourceTree = "<group>"; };
 		FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		FA93D7101E80ACA400AF6ED3 /* WeatherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
+		FA93D7131E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayWeatherUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 		FA93D69F1E7B724A00AF6ED3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FA93D7121E80ADE700AF6ED3 /* Use Cases */,
+				FA93D70F1E80AC9500AF6ED3 /* Presenter */,
 				FA93D6A11E7B726200AF6ED3 /* View */,
 			);
 			name = Core;
@@ -297,6 +303,22 @@
 				FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FA93D70F1E80AC9500AF6ED3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D7101E80ACA400AF6ED3 /* WeatherPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		FA93D7121E80ADE700AF6ED3 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D7131E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift */,
+			);
+			name = "Use Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,7 +463,9 @@
 				FA93D6681E7B70DD00AF6ED3 /* YetAnotherWeatherApp.xcdatamodeld in Sources */,
 				FA93D6A31E7B727100AF6ED3 /* WeatherViewController.swift in Sources */,
 				FA93D6601E7B70DD00AF6ED3 /* AppDelegate.swift in Sources */,
+				FA93D7141E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift in Sources */,
 				FA93D6F31E7DCA7800AF6ED3 /* Temperature.swift in Sources */,
+				FA93D7111E80ACA400AF6ED3 /* WeatherPresenter.swift in Sources */,
 				FA93D6F51E7DCBF100AF6ED3 /* WeatherService.swift in Sources */,
 				FA93D6A51E7B72A400AF6ED3 /* WeatherView.swift in Sources */,
 				FA93D6F91E7DCC7700AF6ED3 /* OpenWeatherMap.swift in Sources */,

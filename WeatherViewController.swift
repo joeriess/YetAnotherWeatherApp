@@ -57,10 +57,10 @@ final class WeatherViewController: UIViewController, WeatherView {
         super.viewDidLoad()
     
         let todaysWeather = WeatherData(temperature: (current: "25", high: "30", low: "20"),
-                                        city: "Berlin",
+                                        city: "BERLIN",
                                         humidity: "5",
                                         description: "Cold",
-                                        timeFetched: "MON, 11AM",
+                                        timeFetched: "11AM",
                                         day: "TUES")
         let tomorrowsWeather = WeatherData(temperature: (current: "25", high: "30", low: "20"),
                                            city: "Berlin",

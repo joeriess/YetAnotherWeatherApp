@@ -38,8 +38,8 @@ final class WeatherHeaderLabel: UILabel {
             textColor = .headerGray
             font = UIFont(name: "HelveticaNeue", size: 300)
         } else {
-            textColor = .white
-            font = UIFont(name: "HelveticaNeue", size: 25)
+            textColor = .subHeaderGray
+            font = UIFont(name: "HelveticaNeue", size: 20)
         }
     }
     

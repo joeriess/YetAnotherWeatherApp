@@ -21,6 +21,6 @@ struct WeatherData {
     let day: String
 }
 
-protocol WeatherView {
+protocol WeatherView: class {
     func display(viewModel: WeatherViewModel)
 }

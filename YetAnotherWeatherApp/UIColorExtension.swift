@@ -11,4 +11,5 @@ import UIKit
 extension UIColor {
     
     static let headerGray = UIColor(red: 0.16, green: 0.16, blue: 0.16, alpha: 1.00)
+    static let subHeaderGray = UIColor(red: 0.33, green: 0.33, blue: 0.33, alpha: 1.00)
 }
