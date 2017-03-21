@@ -33,6 +33,8 @@
 		FA93D7011E7DD19800AF6ED3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D7001E7DD19800AF6ED3 /* Result.framework */; };
 		FA93D7021E7DD19800AF6ED3 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D7001E7DD19800AF6ED3 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA93D7051E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */; };
+		FA93D70B1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D70A1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift */; };
+		FA93D70E1E80A8B900AF6ED3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		FA93D6FD1E7DD16E00AF6ED3 /* Swish.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swish.framework; path = Carthage/Build/iOS/Swish.framework; sourceTree = "<group>"; };
 		FA93D7001E7DD19800AF6ED3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureWeatherDetailTableViewCell.swift; sourceTree = "<group>"; };
+		FA93D70A1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderLabel.swift; sourceTree = "<group>"; };
+		FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +158,10 @@
 		FA93D65E1E7B70DD00AF6ED3 /* YetAnotherWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA93D65F1E7B70DD00AF6ED3 /* AppDelegate.swift */,
 				FA93D6ED1E7DC23100AF6ED3 /* Modules */,
 				FA93D6EF1E7DC24000AF6ED3 /* Services */,
-				FA93D65F1E7B70DD00AF6ED3 /* AppDelegate.swift */,
+				FA93D70C1E80A8A500AF6ED3 /* Extensions */,
 				FA93D6691E7B70DD00AF6ED3 /* Assets.xcassets */,
 				FA93D66B1E7B70DD00AF6ED3 /* LaunchScreen.storyboard */,
 				FA93D66E1E7B70DD00AF6ED3 /* Info.plist */,
@@ -219,8 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				FA93D6A41E7B72A400AF6ED3 /* WeatherView.swift */,
-				FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */,
-				FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */,
+				FA93D7081E80A59300AF6ED3 /* Controller */,
+				FA93D7091E80A59D00AF6ED3 /* Subviews */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -267,6 +272,31 @@
 				FA93D6FB1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift */,
 			);
 			name = OpenWeatherMap;
+			sourceTree = "<group>";
+		};
+		FA93D7081E80A59300AF6ED3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D6A21E7B727100AF6ED3 /* WeatherViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FA93D7091E80A59D00AF6ED3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D7041E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift */,
+				FA93D70A1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		FA93D70C1E80A8A500AF6ED3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA93D70B1E80A5B000AF6ED3 /* WeatherHeaderLabel.swift in Sources */,
 				FA93D7051E7EF99F00AF6ED3 /* FutureWeatherDetailTableViewCell.swift in Sources */,
 				FA93D6681E7B70DD00AF6ED3 /* YetAnotherWeatherApp.xcdatamodeld in Sources */,
 				FA93D6A31E7B727100AF6ED3 /* WeatherViewController.swift in Sources */,
@@ -416,6 +447,7 @@
 				FA93D6F91E7DCC7700AF6ED3 /* OpenWeatherMap.swift in Sources */,
 				FA93D6F71E7DCC3E00AF6ED3 /* Weather.swift in Sources */,
 				FA93D6FC1E7DCCDD00AF6ED3 /* OpenWeatherMapRequest.swift in Sources */,
+				FA93D70E1E80A8B900AF6ED3 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,7 @@
 import UIKit
 import SnapKit
 
-final class WeatherViewController: UIViewController {
-    
-    // MARK: - Variables + Constants
+final class WeatherViewController: UIViewController, WeatherView {
     
     // MARK: - Views
     
@@ -19,33 +17,14 @@ final class WeatherViewController: UIViewController {
         $0.backgroundColor = UIColor(red:0.45, green:0.84, blue:0.84, alpha:1.00)
         return $0
     }(UIView())
-    
-    private let timeCityLabel: UILabel = {
-        $0.textAlignment = .center
-        $0.text = "Berlin"
-        $0.backgroundColor = .red
-        $0.textColor = .white
-        $0.numberOfLines = 0
-        return $0
-    }(UILabel())
-    
-    private let nowTemperatureLabel: UILabel = {
-        $0.textAlignment = .center
-        $0.text = "22"
-        $0.textColor = .white
-        return $0
-    }(UILabel())
-    
+    private let timeCityLabel = WeatherHeaderLabel(type: .location)
+    private let nowTemperatureLabel = WeatherHeaderLabel(type: .temperature)
     private let headerStackView: UIStackView = {
         $0.axis = .vertical
         $0.distribution = .fillEqually
         return $0
     }(UIStackView())
-    
-    private let headerBackgroundImageView: UIImageView = {
-        return $0
-    }(UIImageView())
-    
+    private let headerBackgroundImageView = UIImageView()
     private lazy var detailTableView: UITableView = {
         
         $0.delegate = self
@@ -60,11 +39,19 @@ final class WeatherViewController: UIViewController {
         return $0
     }(UITableView())
     
+    // MARK: - Variables
+    
     private var didCreateConstraints = false
     
-    // MARK: - Presenter
+    // MARK: - Presenter/VM
     
     fileprivate var viewModel: WeatherViewModel?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: - View Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +71,7 @@ final class WeatherViewController: UIViewController {
 
         let fakeViewModel = WeatherViewModel(weather: [todaysWeather, tomorrowsWeather])
         
-        viewModel = fakeViewModel
+        display(viewModel: fakeViewModel)
         
         view.addSubview(headerView)
         headerView.addSubview(headerBackgroundImageView)
@@ -125,6 +112,18 @@ final class WeatherViewController: UIViewController {
         
         
         super.updateViewConstraints()
+    }
+    
+    // MARK: - WeatherView Methods
+    func display(viewModel: WeatherViewModel) {
+        self.viewModel = viewModel
+        
+        guard let tempData = viewModel.weather.first else {
+            return
+        }
+        
+        nowTemperatureLabel.text = tempData.temperature.current
+        timeCityLabel.text = "\(tempData.city)\n\(tempData.day), \(tempData.timeFetched)"
     }
     
 }

@@ -68,6 +68,6 @@ final class FutureWeatherDetailTableViewCell: UITableViewCell {
     
     func configure(weatherData: WeatherData) {
         dayLabel.text = weatherData.day
-        highLowTemperatureLabel.text = "\(weatherData.temperature.high)º / \(weatherData.temperature.low)"
+        highLowTemperatureLabel.text = "\(weatherData.temperature.high)º / \(weatherData.temperature.low)º"
     }
 }
