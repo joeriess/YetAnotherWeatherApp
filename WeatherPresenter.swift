@@ -15,6 +15,7 @@ protocol WeatherPresenter {
 final class WeatherDefaultPresenter: WeatherPresenter {
     
     private let displayWeatherUseCase: DisplayWeatherUseCase
+    private let viewModelBuilder = WeatherViewModelBuilder()
     private weak var view: WeatherView?
     
     init(view: WeatherView,
@@ -27,7 +28,23 @@ final class WeatherDefaultPresenter: WeatherPresenter {
     func loadContent() {
         displayWeatherUseCase.fetchWeather() { weather in
             
-//            view?.display(viewModel: )
+            DispatchQueue.main.async {
+                self.view?.display(viewModel: self.viewModelBuilder.build(from: weather))
+            }
         }
+    }
+}
+
+struct WeatherViewModelBuilder {
+    
+    func build(from weather: Weather) -> WeatherViewModel {
+        print(weather)
+        let weatherData = WeatherData(temperature: (current: "\(Int(weather.temperature.now))", high: "\(weather.temperature.man)", low: "\(weather.temperature.min)"),
+                                      city: weather.name,
+                                      humidity: "",
+                                      description: "It's hot",
+                                      timeFetched: "11AM",
+                                      day: "TUES")
+        return WeatherViewModel(weather: [weatherData])
     }
 }

@@ -46,6 +46,8 @@ final class WeatherViewController: UIViewController, WeatherView {
     // MARK: - Presenter/VM
     
     fileprivate var viewModel: WeatherViewModel?
+    private let configurator = WeatherViewConfigurator()
+    var presenter: WeatherPresenter!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -55,24 +57,10 @@ final class WeatherViewController: UIViewController, WeatherView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configurator.configure(view: self)
+        presenter.loadContent()
     
-        let todaysWeather = WeatherData(temperature: (current: "25", high: "30", low: "20"),
-                                        city: "BERLIN",
-                                        humidity: "5",
-                                        description: "Cold",
-                                        timeFetched: "11AM",
-                                        day: "TUES")
-        let tomorrowsWeather = WeatherData(temperature: (current: "25", high: "30", low: "20"),
-                                           city: "Berlin",
-                                           humidity: "5",
-                                           description: "Cold",
-                                           timeFetched: "11AM",
-                                           day: "TUES")
-
-        let fakeViewModel = WeatherViewModel(weather: [todaysWeather, tomorrowsWeather])
-        
-        display(viewModel: fakeViewModel)
-        
         view.addSubview(headerView)
         headerView.addSubview(headerBackgroundImageView)
         
@@ -117,6 +105,8 @@ final class WeatherViewController: UIViewController, WeatherView {
     // MARK: - WeatherView Methods
     func display(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
+        
+        print(viewModel)
         
         guard let tempData = viewModel.weather.first else {
             return

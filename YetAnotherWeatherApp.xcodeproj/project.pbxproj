@@ -37,6 +37,7 @@
 		FA93D70E1E80A8B900AF6ED3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */; };
 		FA93D7111E80ACA400AF6ED3 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7101E80ACA400AF6ED3 /* WeatherPresenter.swift */; };
 		FA93D7141E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7131E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift */; };
+		FA93D7171E80B1BA00AF6ED3 /* WeatherViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93D7161E80B1BA00AF6ED3 /* WeatherViewConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		FA93D70D1E80A8B900AF6ED3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		FA93D7101E80ACA400AF6ED3 /* WeatherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
 		FA93D7131E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayWeatherUseCase.swift; sourceTree = "<group>"; };
+		FA93D7161E80B1BA00AF6ED3 /* WeatherViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 		FA93D69F1E7B724A00AF6ED3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FA93D7151E80B1B000AF6ED3 /* Builder */,
 				FA93D7121E80ADE700AF6ED3 /* Use Cases */,
 				FA93D70F1E80AC9500AF6ED3 /* Presenter */,
 				FA93D6A11E7B726200AF6ED3 /* View */,
@@ -319,6 +322,14 @@
 				FA93D7131E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift */,
 			);
 			name = "Use Cases";
+			sourceTree = "<group>";
+		};
+		FA93D7151E80B1B000AF6ED3 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				FA93D7161E80B1BA00AF6ED3 /* WeatherViewConfigurator.swift */,
+			);
+			name = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +476,7 @@
 				FA93D6601E7B70DD00AF6ED3 /* AppDelegate.swift in Sources */,
 				FA93D7141E80ADF600AF6ED3 /* DisplayWeatherUseCase.swift in Sources */,
 				FA93D6F31E7DCA7800AF6ED3 /* Temperature.swift in Sources */,
+				FA93D7171E80B1BA00AF6ED3 /* WeatherViewConfigurator.swift in Sources */,
 				FA93D7111E80ACA400AF6ED3 /* WeatherPresenter.swift in Sources */,
 				FA93D6F51E7DCBF100AF6ED3 /* WeatherService.swift in Sources */,
 				FA93D6A51E7B72A400AF6ED3 /* WeatherView.swift in Sources */,
